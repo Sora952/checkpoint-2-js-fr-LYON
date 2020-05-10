@@ -1,12 +1,16 @@
 import React from 'react'
-import './App.css'
-import GameList from './GameList'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Gamelist from './GameList'
+import GameScreenshots from './GameScreenshots'
 
 function App () {
   return (
-    <div className="App">
-      <GameList/>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Gamelist}/>
+        <Route exact path='/jeu/screenshots/:id' component={GameScreenshots}/>
+      </Switch>
+    </Router>
   )
 }
 

@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
-function Game ({ id, name, rating, background_image, deleteCard }) {
+function Game ({ id, name, rating, background_image, deleteCard, short_screenshots }) {
   return (
     <div>
       <div className='img-hov ThumbNail'>
@@ -13,6 +14,7 @@ function Game ({ id, name, rating, background_image, deleteCard }) {
         </figcaption>
       </div>
       <button className='button' onClick={() => deleteCard(id)}>Delete a Game</button>
+      <Link className='button' to={{ pathname: `/jeu/screenshots/${id}`, state: short_screenshots }}>See More Pictures</Link>
     </div>
   )
 }
